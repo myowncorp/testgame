@@ -5,8 +5,10 @@
   <Config />
   <SourceFiles>
     <File>/home/james/Projects/testgame/testgame/Content/ball.png</File>
+    <File>/home/james/Projects/testgame/testgame/Content/blue-bullet.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
