@@ -92,22 +92,26 @@ namespace testgame.Desktop
             if (kstate.IsKeyDown(Keys.Up))
             {
                 ballPosition.Y -= ballSpeed * gTime;
-               ballYAccel = -1;
+                ballYAccel = -1;
+                ballXAccel =  0;
             }
             if (kstate.IsKeyDown(Keys.Down))
             {
                 ballPosition.Y += ballSpeed * gTime;
                 ballYAccel = 1;
+                ballXAccel = 0;
             }
             if (kstate.IsKeyDown(Keys.Left))
             {
                 ballPosition.X -= ballSpeed * gTime;
                 ballXAccel = -1;
+                ballYAccel =  0;
             }
             if (kstate.IsKeyDown(Keys.Right))
             {
                 ballPosition.X += ballSpeed * gTime;
                 ballXAccel = 1;
+                ballYAccel = 0;
             }
             if (kstate.IsKeyDown(Keys.Space))
             {
