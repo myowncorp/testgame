@@ -16,15 +16,8 @@ namespace testgame.Desktop
         List<Bullet> playerShots = new List<Bullet>();
         // blueBullet
         Texture2D blueBullet;
-
-        // Ball
+        Ball player;
         Texture2D ballTexture;
-        Vector2 ballPosition;
-        float ballSpeed;
-        int ballXAccel;
-        int ballYAccel;
-
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -40,6 +33,13 @@ namespace testgame.Desktop
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            player = new Ball(ballTexture,
+                     new Vector2(graphics.PreferredBackBufferWidth  / 2,
+                                 graphics.PreferredBackBufferHeight / 2),
+                              100f,
+                              0,
+                              0)
+
             ballPosition = new Vector2(graphics.PreferredBackBufferWidth / 2,
                  graphics.PreferredBackBufferHeight / 2);
             ballSpeed = 100f;
