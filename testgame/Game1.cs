@@ -12,11 +12,10 @@ namespace testgame.Desktop
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        Ball player;
         List<Bullet> playerShots = new List<Bullet>();
         // blueBullet
         Texture2D blueBullet;
-        Ball player;
         Texture2D ballTexture;
         public Game1()
         {
@@ -33,19 +32,12 @@ namespace testgame.Desktop
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            player = new Ball(ballTexture,
+            Ball player = new Ball(ballTexture,
                      new Vector2(graphics.PreferredBackBufferWidth  / 2,
                                  graphics.PreferredBackBufferHeight / 2),
                               100f,
                               0,
-                              0)
-
-            ballPosition = new Vector2(graphics.PreferredBackBufferWidth / 2,
-                 graphics.PreferredBackBufferHeight / 2);
-            ballSpeed = 100f;
-            ballXAccel = 0;
-            ballYAccel = 0;
-
+                              0);
             base.Initialize();
         }
 
@@ -88,39 +80,41 @@ namespace testgame.Desktop
             var kstate = Keyboard.GetState();
             var gTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            ballPosition = ballPositioner(ballPosition);
+            player.Pos = playerPositioner(player.Pos);
+
+
             if (kstate.IsKeyDown(Keys.Up))
             {
-                ballPosition.Y -= ballSpeed * gTime;
-                ballYAccel = -1;
-                ballXAccel =  0;
+                player.Y -= player.Spd * gTime;
+                player.Ay = -1;
+                player.Ax =  0;
             }
             if (kstate.IsKeyDown(Keys.Down))
             {
-                ballPosition.Y += ballSpeed * gTime;
-                ballYAccel = 1;
-                ballXAccel = 0;
+                player.Y += player.Spd * gTime;
+                player.Ay = 1;
+                player.Ax = 0;
             }
             if (kstate.IsKeyDown(Keys.Left))
             {
-                ballPosition.X -= ballSpeed * gTime;
-                ballXAccel = -1;
-                ballYAccel =  0;
+                player.X-= player.Spd * gTime;
+                player.Ax = -1;
+                player.Ay =  0;
             }
             if (kstate.IsKeyDown(Keys.Right))
             {
-                ballPosition.X += ballSpeed * gTime;
-                ballXAccel = 1;
-                ballYAccel = 0;
+                player.X += player.Spd * gTime;
+                player.Ax = 1;
+                player.Ay = 0;
             }
             if (kstate.IsKeyDown(Keys.Space))
             {
-                bt = new Bullet(blueBullet, new Vector2(ballPosition.X, ballPosition.Y), ballXAccel, ballYAccel, 250, 50);
+                bt = new Bullet(blueBullet, new Vector2(player.Pos.X, player.Pos.Y), player.Ax, player.Ay, 250, 50);
                 playerShots.Add(bt);
             }
 
            
-            Vector2 ballPositioner(Vector2 bp)
+            Vector2 playerPositioner(Vector2 bp)
             {
                 Vector2 newBp;
 
@@ -193,8 +187,8 @@ namespace testgame.Desktop
             // TODO: Add your drawing code here 
             spriteBatch.Begin();
             spriteBatch.Draw(
-                ballTexture,
-                ballPosition,
+                player.Skin,
+                player.Pos,
                 null,
                 Color.White,
                 0f,

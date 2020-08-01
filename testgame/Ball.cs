@@ -7,13 +7,13 @@ namespace testgame.Desktop
 
     public class Ball
     {
-        public Texture2D Skin;
-        public Vector2   Pos;  
-        public float     X;   
-        public float     Y;   
-        public float     Spd;  
-        public int       Ax;   
-        public int       Ay;
+        public Texture2D Skin  { get; set; }
+        public Vector2   Pos   { get; set; }
+        public float     X     { get; set; }
+        public float     Y     { get; set; }
+        public float     Spd   { get; set; }
+        public int       Ax    { get; set; }
+        public int       Ay    { get; set; }
 
         public Ball(Texture2D ballTexture,
                     Vector2   ballPosition,
