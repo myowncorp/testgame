@@ -16,6 +16,7 @@ namespace testgame.Desktop
         public int       Bulldmg   { get; set; }
 
         public Bullet(Texture2D bulletimg, Vector2 bulletPos, int accelx, int accely, float bullspeed, int bulletdmg){
+
             BullText = bulletimg;
             Ax       = accelx;
             Ay       = accely;
