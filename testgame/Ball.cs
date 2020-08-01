@@ -7,8 +7,6 @@ namespace testgame.Desktop
 
     public class Ball
     {
-        GraphicsDeviceManager graphics;
-
 
         public Texture2D Skin  { get; set; }
         public Vector2   Pos   { get; set; }
@@ -34,7 +32,7 @@ namespace testgame.Desktop
         }
 
 
-         public void UpdPos(GameTime gametime)
+         public void UpdPos(GameTime gametime, GraphicsDeviceManager graphics)
             {
           
 

@@ -32,7 +32,7 @@ namespace testgame.Desktop
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            Ball player = new Ball(ballTexture,
+            player = new Ball(Content.Load<Texture2D>("ball"),
                      new Vector2(graphics.PreferredBackBufferWidth  / 2,
                                  graphics.PreferredBackBufferHeight / 2),
                               100f,
@@ -113,7 +113,8 @@ namespace testgame.Desktop
 
            
            
-           
+           player.UpdPos(gameTime, graphics);
+
             foreach (Bullet bullet in playerShots)
             {
                 bullet.UpdPos(gameTime);
