@@ -80,9 +80,7 @@ namespace testgame.Desktop
             var kstate = Keyboard.GetState();
             var gTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            player.Pos = playerPositioner(player.Pos);
-
-
+            
             if (kstate.IsKeyDown(Keys.Up))
             {
                 player.Y -= player.Spd * gTime;
@@ -114,57 +112,7 @@ namespace testgame.Desktop
             }
 
            
-            Vector2 playerPositioner(Vector2 bp)
-            {
-                Vector2 newBp;
-
-                newBp.X = ballPosX(bp.X);
-                newBp.Y = ballPosY(bp.Y);
-
-                float ballPosX(float x)
-                {
-                    float newX;
-
-                    if (ballCollideX(x))
-                        newX = graphics.PreferredBackBufferWidth - ballTexture.Width / 2;
-                    else
-                        newX = x;
-
-                    return newX;
-                }
-
-                float ballPosY(float y)
-                {
-                    float newY;
-
-                    if (ballCollideY(y))
-                        newY = graphics.PreferredBackBufferHeight - ballTexture.Height / 2;
-                    else
-                        newY = y;
-
-                    return newY;
-                }
-
-                bool ballCollideX(float x)
-                {
-                    if (x > (graphics.PreferredBackBufferWidth - ballTexture.Width / 2))
-                        return true;
-                    else if (x < (0 + ballTexture.Width / 2))
-                        return true;
-                    else
-                        return false;
-                }
-
-                bool ballCollideY(float y)
-                {
-                    if (y > (graphics.PreferredBackBufferHeight - ballTexture.Height / 2))
-                        return true;
-                    else
-                        return false;
-                }
-
-                return newBp;
-            }
+           
            
             foreach (Bullet bullet in playerShots)
             {
@@ -189,14 +137,9 @@ namespace testgame.Desktop
             spriteBatch.Draw(
                 player.Skin,
                 player.Pos,
-                null,
-                Color.White,
-                0f,
-                new Vector2(ballTexture.Width / 2, ballTexture.Height / 2),
-                Vector2.One,
-                SpriteEffects.None,
-                0f);
-            foreach (Bullet bullet in playerShots)
+                Color.White);
+
+             foreach (Bullet bullet in playerShots)
             {
                 spriteBatch.Draw(
                 bullet.BullText, bullet.Bp, Color.White);
