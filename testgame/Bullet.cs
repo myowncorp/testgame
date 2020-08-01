@@ -13,8 +13,9 @@ namespace testgame.Desktop
         public float     X         { get; set; }
         public float     Y         { get; set; }
         public Texture2D BullText  { get; set; }
+        public int       Bulldmg   { get; set; }
 
-        public Bullet(Texture2D bulletimg, Vector2 bulletPos, int accelx, int accely, float bullspeed){
+        public Bullet(Texture2D bulletimg, Vector2 bulletPos, int accelx, int accely, float bullspeed, int bulletdmg){
             BullText = bulletimg;
             Ax       = accelx;
             Ay       = accely;
@@ -22,6 +23,7 @@ namespace testgame.Desktop
             Bp       = bulletPos;
             X        = bulletPos.X;
             Y        = bulletPos.Y;
+            Bulldmg  = bulletdmg;
         }
 
 

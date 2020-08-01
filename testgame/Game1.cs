@@ -115,7 +115,7 @@ namespace testgame.Desktop
             }
             if (kstate.IsKeyDown(Keys.Space))
             {
-                bt = new Bullet(blueBullet, new Vector2(ballPosition.X, ballPosition.Y), ballXAccel, ballYAccel, 250);
+                bt = new Bullet(blueBullet, new Vector2(ballPosition.X, ballPosition.Y), ballXAccel, ballYAccel, 250, 50);
                 playerShots.Add(bt);
             }
 
