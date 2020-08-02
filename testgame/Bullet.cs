@@ -10,11 +10,12 @@ namespace testgame.Desktop
         public int       Ay        { get; set; }
         public float     Spd       { get; set; }
         public Vector2   Bp        { get; set; }
-
         public Texture2D BullText  { get; set; }
         public int       Bulldmg   { get; set; }
+        public double    Interval;
 
-        public Bullet(Texture2D bulletimg, Vector2 bulletPos, int accelx, int accely, float bullspeed, int bulletdmg){
+        public Bullet(Texture2D bulletimg, Vector2 bulletPos, int accelx, int accely, float bullspeed, int bulletdmg,
+                       double frate){
 
             BullText = bulletimg;
             Ax       = accelx;
@@ -22,9 +23,11 @@ namespace testgame.Desktop
             Spd      = bullspeed;
             Bp       = bulletPos;
             Bulldmg  = bulletdmg;
+            Interval = frate;
+
         }
 
-
+ 
 
         public void UpdPos(GameTime gameTime)
         {

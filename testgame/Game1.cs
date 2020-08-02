@@ -79,7 +79,6 @@ namespace testgame.Desktop
             // TODO: Add your update logic herevar kstate = Keyboard.GetState();
             var kstate = Keyboard.GetState();
             var gTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-
             
             if (kstate.IsKeyDown(Keys.Up))
             {
@@ -107,7 +106,18 @@ namespace testgame.Desktop
             }
             if (kstate.IsKeyDown(Keys.Space))
             {
-                bt = new Bullet(blueBullet, new Vector2(player.Pos.X, player.Pos.Y), player.Ax, player.Ay, 250, 50);
+                if (!bt)
+                {
+                    bt.Interval = 0;
+                }
+                if (gTime > bt.Interval)
+                {
+
+
+                }
+            }
+
+                bt = new Bullet(blueBullet, new Vector2(player.Pos.X, player.Pos.Y), player.Ax, player.Ay, 250, 50, .5);
                 playerShots.Add(bt);
             }
 
