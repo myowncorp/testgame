@@ -12,7 +12,7 @@ namespace testgame.Desktop
         public Vector2   Bp        { get; set; }
         public Texture2D BullText  { get; set; }
         public int       Bulldmg   { get; set; }
-        public double    Interval;
+        public double     Interval;
 
         public Bullet(Texture2D bulletimg, Vector2 bulletPos, int accelx, int accely, float bullspeed, int bulletdmg,
                        double frate){

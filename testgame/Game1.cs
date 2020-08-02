@@ -106,17 +106,7 @@ namespace testgame.Desktop
             }
             if (kstate.IsKeyDown(Keys.Space))
             {
-                if (!bt)
-                {
-                    bt.Interval = 0;
-                }
-                if (gTime > bt.Interval)
-                {
-
-
-                }
-            }
-
+        
                 bt = new Bullet(blueBullet, new Vector2(player.Pos.X, player.Pos.Y), player.Ax, player.Ay, 250, 50, .5);
                 playerShots.Add(bt);
             }
