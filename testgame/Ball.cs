@@ -8,13 +8,11 @@ namespace testgame.Desktop
     public class Ball
     {
 
-        public Texture2D Skin  { get; set; }
-        public Vector2   Pos   { get; set; }
-        public float     X     { get; set; }
-        public float     Y     { get; set; }
-        public float     Spd   { get; set; }
-        public int       Ax    { get; set; }
-        public int       Ay    { get; set; }
+        public Texture2D Skin;  
+        public Vector2   Pos;
+        public float     Spd; 
+        public int       Ax;  
+        public int       Ay;   
 
         public Ball(Texture2D ballTexture,
                     Vector2   ballPosition,
@@ -24,8 +22,6 @@ namespace testgame.Desktop
             
             Skin = ballTexture;
             Pos  = ballPosition;
-            X    = ballPosition.X;
-            Y    = ballPosition.Y;
             Spd  = ballSpeed;
             Ax   = ballXAccel;
             Ay   = ballYAccel;
@@ -36,8 +32,8 @@ namespace testgame.Desktop
             {
           
 
-                this.X = ballPosX(this.X);
-                this.Y = ballPosY(this.Y);
+                this.Pos.X = ballPosX(this.Pos.X);
+                this.Pos.Y = ballPosY(this.Pos.Y);
 
                 float ballPosX(float x)
                 {

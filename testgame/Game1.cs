@@ -83,25 +83,25 @@ namespace testgame.Desktop
             
             if (kstate.IsKeyDown(Keys.Up))
             {
-                player.Y -= player.Spd * gTime;
+                player.Pos.Y -= player.Spd * gTime;
                 player.Ay = -1;
                 player.Ax =  0;
             }
             if (kstate.IsKeyDown(Keys.Down))
             {
-                player.Y += player.Spd * gTime;
+                player.Pos.Y += player.Spd * gTime;
                 player.Ay = 1;
                 player.Ax = 0;
             }
             if (kstate.IsKeyDown(Keys.Left))
             {
-                player.X-= player.Spd * gTime;
+                player.Pos.X-= player.Spd * gTime;
                 player.Ax = -1;
                 player.Ay =  0;
             }
             if (kstate.IsKeyDown(Keys.Right))
             {
-                player.X += player.Spd * gTime;
+                player.Pos.X += player.Spd * gTime;
                 player.Ax = 1;
                 player.Ay = 0;
             }

@@ -10,8 +10,7 @@ namespace testgame.Desktop
         public int       Ay        { get; set; }
         public float     Spd       { get; set; }
         public Vector2   Bp        { get; set; }
-        public float     X         { get; set; }
-        public float     Y         { get; set; }
+
         public Texture2D BullText  { get; set; }
         public int       Bulldmg   { get; set; }
 
@@ -22,8 +21,6 @@ namespace testgame.Desktop
             Ay       = accely;
             Spd      = bullspeed;
             Bp       = bulletPos;
-            X        = bulletPos.X;
-            Y        = bulletPos.Y;
             Bulldmg  = bulletdmg;
         }
 
@@ -34,17 +31,17 @@ namespace testgame.Desktop
             if (this.Ax != 0)
             {
                 var xChange = this.Spd;
-                var xDir = xChange * this.Ax;
-                var newX = (float)gameTime.ElapsedGameTime.TotalSeconds * xDir + this.Bp.X;
-                this.Bp = new Vector2(newX, this.Bp.Y);
+                var xDir    = xChange * this.Ax;
+                var newX    = (float)gameTime.ElapsedGameTime.TotalSeconds * xDir + this.Bp.X;
+                this.Bp     = new Vector2(newX, this.Bp.Y);
             }
             else
             {
 
                 var yChange = this.Spd;
-                var yDir = (yChange * this.Ay);
-                var newY = (float)gameTime.ElapsedGameTime.TotalSeconds * yDir + this.Bp.Y;
-                this.Bp = new Vector2(this.Bp.X, newY);
+                var yDir    = (yChange * this.Ay);
+                var newY    = (float)gameTime.ElapsedGameTime.TotalSeconds * yDir + this.Bp.Y;
+                this.Bp     = new Vector2(this.Bp.X, newY);
             }
        }
    }
