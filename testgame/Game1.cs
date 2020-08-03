@@ -16,8 +16,9 @@ namespace testgame.Desktop
         List<Bullet>          playerShots   = new List<Bullet>();
         List<Enemy>           enemyOnScreen = new List<Enemy>();
         Curve                 curve1         = new Curve();
-        CurveKeyCollection    curveKeys  = new CurveKeyCollection;
+        CurveKeyCollection    curveKeys  = new CurveKeyCollection();
 
+        Enemy redEnemy1;
         // graphic inits
         Texture2D blueBullet;
         Texture2D ballTexture;
@@ -50,7 +51,8 @@ namespace testgame.Desktop
                               0,
                               0);
   
-            
+            curve1.Keys.Add(new CurveKey(50,1));
+            curve1.Keys.Add(new CurveKey(70,2));
             base.Initialize();
         }
 
@@ -86,7 +88,7 @@ namespace testgame.Desktop
         protected override void Update(GameTime gameTime)
         {
             Bullet bt;
-            Enemy redEnemy1 = new Enemy(Content.Load<Texture2D>("red-enemy"), new Vector2(50, 50), 100, 1, 1, 5, null);
+            redEnemy1 = new Enemy(Content.Load<Texture2D>("red-enemy"), new Vector2(50, 50), 100, 1, 1, 5, null);
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
@@ -164,6 +166,11 @@ namespace testgame.Desktop
                 player.Skin,
                 player.Pos,
                 Color.White);
+            spriteBatch.Draw(
+                redEnemy1.Skin,
+                curve1,
+                Color.Red
+                );
 
              foreach (Bullet bullet in playerShots)
             {
