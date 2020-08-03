@@ -14,11 +14,13 @@ namespace testgame.Desktop
         public int       Ay;
         public int       Dmg;
 
+
+
         public Enemy(Texture2D enemyTexture,
                      Vector2   enemyPos,
                      float     enemySpeed,
                      int       enemyXAccel,
-                     int       enemyYAccel
+                     int       enemyYAccel,
                      int       enemyDamage){
 
 
