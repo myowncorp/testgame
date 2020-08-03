@@ -1,3 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/home/james/Projects/testgame/testgame/Content/ball.png","/home/james/Projects/testgame/testgame/Content/bin/DesktopGL/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.201954
-"/home/james/Projects/testgame/testgame/Content/blue-bullet.png","/home/james/Projects/testgame/testgame/Content/bin/DesktopGL/blue-bullet.xnb","TextureProcessor","Texture2DContent",323,985,0.002069
+"/home/james/Projects/testgame/testgame/Content/ball.png","/home/james/Projects/testgame/testgame/Content/bin/DesktopGL/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.159231
+"/home/james/Projects/testgame/testgame/Content/blue-bullet.png","/home/james/Projects/testgame/testgame/Content/bin/DesktopGL/blue-bullet.xnb","TextureProcessor","Texture2DContent",323,985,0.001362

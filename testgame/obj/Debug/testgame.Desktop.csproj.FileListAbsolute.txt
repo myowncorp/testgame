@@ -20,3 +20,4 @@
 /home/james/Projects/testgame/testgame/obj/Debug/testgame.Desktop.pdb
 /home/james/Projects/testgame/testgame/bin/DesktopGL/AnyCPU/Debug/Content/ball.xnb
 /home/james/Projects/testgame/testgame/bin/DesktopGL/AnyCPU/Debug/Content/blue-bullet.xnb
+/home/james/Projects/testgame/testgame/bin/DesktopGL/AnyCPU/Debug/Content/red-enemy.xnb

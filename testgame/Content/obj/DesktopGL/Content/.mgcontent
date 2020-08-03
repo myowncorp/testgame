@@ -6,9 +6,11 @@
   <SourceFiles>
     <File>/home/james/Projects/testgame/testgame/Content/ball.png</File>
     <File>/home/james/Projects/testgame/testgame/Content/blue-bullet.png</File>
+    <File>/home/james/Projects/testgame/testgame/Content/redenemy.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File>red-enemy.png</File>
   </DestFiles>
 </SourceFileCollection>

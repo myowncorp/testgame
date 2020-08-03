@@ -11,13 +11,16 @@ namespace testgame.Desktop
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
-        Ball player;
-        List<Bullet> playerShots = new List<Bullet>();
-        // blueBullet
+        SpriteBatch           spriteBatch;
+        Ball                  player;
+        List<Bullet>          playerShots   = new List<Bullet>();
+        List<Enemy>           enemyOnScreen = new List<Enemy>();
+        // graphic inits
         Texture2D blueBullet;
         Texture2D ballTexture;
-        double bullCounter = 0;
+        Texture2D redEnemy;
+
+        double    bullCounter = 0; // this counts the shot interval it will be set to .5 for example
 
         public List<Vector2> testPattern;
 
@@ -59,7 +62,8 @@ namespace testgame.Desktop
 
             // TODO: use this.Content to load your game content here
             ballTexture = Content.Load<Texture2D>("ball");
-            blueBullet = Content.Load<Texture2D>("blue-bullet");
+            blueBullet  = Content.Load<Texture2D>("blue-bullet");
+            redEnemy    = Content.Load<Texture2D>("red-enemy");
         }
 
         /// <summary>
@@ -86,7 +90,11 @@ namespace testgame.Desktop
             // TODO: Add your update logic herevar kstate = Keyboard.GetState();
             var kstate = Keyboard.GetState();
             var gTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            
+            if(gameTime.TotalGameTime.Seconds == 1)
+            {
+
+
+            }
             if (kstate.IsKeyDown(Keys.Up))
             {
                 player.Pos.Y -= player.Spd * gTime;
@@ -132,6 +140,11 @@ namespace testgame.Desktop
                 bullet.UpdPos(gameTime);
             }
 
+            foreach (Enemy enemy in enemyOnScreen)
+            {
+                enemy.UpdPos(gameTime);
+
+            }
 
 
             base.Update(gameTime);
