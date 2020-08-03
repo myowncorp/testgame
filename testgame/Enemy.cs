@@ -10,7 +10,7 @@ namespace testgame.Desktop
         public Texture2D Skin;  
         public Vector2   Pos;
         public float     Spd; 
-        public int       Ax;  
+        public int       Ax;
         public int       Ay;
         public int       Dmg;
 

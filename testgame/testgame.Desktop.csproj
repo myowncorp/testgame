@@ -48,6 +48,7 @@
     <Compile Include="Bullet.cs" />
     <Compile Include="Ball.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="MovePattern.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
