@@ -36,8 +36,8 @@ namespace testgame.Desktop
             Ay   = enemyYAccel;
             Dmg  = enemyDamage;
             Path = enemyPath;
-
-            
         }
+
+        public void UpdPos(){ }
     }
 }

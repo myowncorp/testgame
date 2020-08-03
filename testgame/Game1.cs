@@ -18,7 +18,7 @@ namespace testgame.Desktop
         // graphic inits
         Texture2D blueBullet;
         Texture2D ballTexture;
-        Texture2D redEnemy;
+        Texture2D redEnemyText;
 
         double    bullCounter = 0; // this counts the shot interval it will be set to .5 for example
 
@@ -63,7 +63,7 @@ namespace testgame.Desktop
             // TODO: use this.Content to load your game content here
             ballTexture = Content.Load<Texture2D>("ball");
             blueBullet  = Content.Load<Texture2D>("blue-bullet");
-            redEnemy    = Content.Load<Texture2D>("red-enemy");
+            redEnemyText    = Content.Load<Texture2D>("red-enemy");
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace testgame.Desktop
         protected override void Update(GameTime gameTime)
         {
             Bullet bt;
-
+            Enemy redEnemy1 = new Enemy(Content.Load<Texture2D>("red-enemy"), new Vector2(50, 50), 100, 1, 1, 5, null);
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
@@ -92,6 +92,7 @@ namespace testgame.Desktop
             var gTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             if(gameTime.TotalGameTime.Seconds == 1)
             {
+                enemyOnScreen.Add(redEnemy1);
 
 
             }
@@ -140,11 +141,7 @@ namespace testgame.Desktop
                 bullet.UpdPos(gameTime);
             }
 
-            foreach (Enemy enemy in enemyOnScreen)
-            {
-                enemy.UpdPos(gameTime);
-
-            }
+         
 
 
             base.Update(gameTime);
@@ -169,6 +166,12 @@ namespace testgame.Desktop
             {
                 spriteBatch.Draw(
                 bullet.BullText, bullet.Bp, Color.White);
+            }
+             foreach (Enemy enemy in enemyOnScreen)
+            {
+                spriteBatch.Draw(
+                enemy.Skin, enemy.Pos, Color.White);
+
             }
 
             spriteBatch.End();
