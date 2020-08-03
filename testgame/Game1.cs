@@ -17,6 +17,7 @@ namespace testgame.Desktop
         // blueBullet
         Texture2D blueBullet;
         Texture2D ballTexture;
+        double bullCounter = 0;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -104,16 +105,21 @@ namespace testgame.Desktop
                 player.Ax = 1;
                 player.Ay = 0;
             }
+           
+                   
             if (kstate.IsKeyDown(Keys.Space))
             {
-        
-                bt = new Bullet(blueBullet, new Vector2(player.Pos.X, player.Pos.Y), player.Ax, player.Ay, 250, 50, .5);
-                playerShots.Add(bt);
+                if (bullCounter <= 0){
+                    bt = new Bullet(blueBullet, new Vector2(player.Pos.X, player.Pos.Y), player.Ax, player.Ay, 250, 50, .5);
+                    playerShots.Add(bt);           // Add the bullet to the batch that will be drawn
+                    bullCounter = bt.Interval;     // make the counter = to the bulltets firerat
+                } 
             }
 
+            bullCounter -= gTime;
            
            
-           player.UpdPos(gameTime, graphics);
+            player.UpdPos(gameTime, graphics);
 
             foreach (Bullet bullet in playerShots)
             {
