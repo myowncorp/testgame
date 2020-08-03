@@ -15,6 +15,9 @@ namespace testgame.Desktop
         Ball                  player;
         List<Bullet>          playerShots   = new List<Bullet>();
         List<Enemy>           enemyOnScreen = new List<Enemy>();
+        Curve                 curve1         = new Curve();
+        CurveKeyCollection    curveKeys  = new CurveKeyCollection;
+
         // graphic inits
         Texture2D blueBullet;
         Texture2D ballTexture;
@@ -47,7 +50,7 @@ namespace testgame.Desktop
                               0,
                               0);
   
-
+            
             base.Initialize();
         }
 
