@@ -43,14 +43,7 @@ namespace testgame.Desktop
                               100f,
                               0,
                               0);
-            Vector2 testVector1  = new Vector2(10, 10);
-            Vector2 testVector2  = new Vector2(10, 20);
-            Vector2 testVector3  = new Vector2(15, 30);
-            Vector2 testVector4  = new Vector2(45, 50);
-            testPattern.Add(testVector1);
-            testPattern.Add(testVector2);
-            testPattern.Add(testVector3);
-            testPattern.Add(testVector4);
+  
 
             base.Initialize();
         }
