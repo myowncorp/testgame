@@ -1,4 +1,0 @@
-Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/home/james/Projects/testgame/testgame/Content/ball.png","/home/james/Projects/testgame/testgame/Content/bin/DesktopGL/Content/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.136832
-"/home/james/Projects/testgame/testgame/Content/blue-bullet.png","/home/james/Projects/testgame/testgame/Content/bin/DesktopGL/Content/blue-bullet.xnb","TextureProcessor","Texture2DContent",323,985,0.287777
-"/home/james/Projects/testgame/testgame/Content/redenemy.png","/home/james/Projects/testgame/testgame/Content/bin/DesktopGL/Content/red-enemy.xnb","TextureProcessor","Texture2DContent",276,1225,0.153687
